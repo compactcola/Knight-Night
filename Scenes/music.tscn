@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgdow4b54acur"]
+
+[ext_resource type="AudioStream" uid="uid://cb0ad1uixlg4t" path="res://Assets/music/friends_theme_8bit.wav" id="1_r8657"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_r8657")
+autoplay = true
+bus = &"Music"
