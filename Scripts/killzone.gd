@@ -7,6 +7,7 @@ func _on_body_entered(body):
 	body.get_node("AnimatedSprite2D").flip_v = true
 	body.get_node("CollisionShape2D").queue_free()
 	timer.start()
+	%DeathSound.play()
 
 func _on_timer_timeout():
 	Engine.time_scale = 1
