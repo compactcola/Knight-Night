@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://o3ty06os27tr" path="res://Assets/sprites/coin.png" id="1_8djts"]
 [ext_resource type="Script" uid="uid://dxo6l61nwr7pj" path="res://Scripts/coin.gd" id="1_oy30o"]
 [ext_resource type="AudioStream" uid="uid://c1oq7hrwjip4k" path="res://Assets/sounds/coin.wav" id="3_w5hui"]
+[ext_resource type="Texture2D" uid="uid://clfn2ubd2hppn" path="res://Assets/sprites/radial_gradient.png" id="4_h2p6v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnavk"]
 atlas = ExtResource("1_8djts")
@@ -197,6 +198,7 @@ _data = {
 &"pickup": SubResource("Animation_vm0fk")
 }
 
+<<<<<<< Updated upstream
 [node name="Coin" type="Area2D" unique_id=2003072326]
 collision_mask = 2
 script = ExtResource("1_oy30o")
@@ -214,5 +216,29 @@ bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=168434055]
 libraries/ = SubResource("AnimationLibrary_km1sn")
+=======
+[node name="Coin" type="Area2D" unique_id=1809171540]
+collision_mask = 2
+script = ExtResource("1_oy30o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218446676]
+sprite_frames = SubResource("SpriteFrames_gxxwm")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=374539167]
+shape = SubResource("CircleShape2D_6iomm")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=857790733]
+stream = ExtResource("3_w5hui")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=453498427]
+libraries/ = SubResource("AnimationLibrary_km1sn")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1207005198]
+color = Color(1, 1, 0, 0.4862745)
+energy = 0.5
+texture = ExtResource("4_h2p6v")
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

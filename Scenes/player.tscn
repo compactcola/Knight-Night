@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c56vp2wkqk6be" path="res://Scripts/player.gd" id="1_brmte"]
 [ext_resource type="Texture2D" uid="uid://bm153hv2o728o" path="res://Assets/sprites/knight.png" id="1_tv3bd"]
+[ext_resource type="Texture2D" uid="uid://clfn2ubd2hppn" path="res://Assets/sprites/radial_gradient.png" id="3_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsgjc"]
 atlas = ExtResource("1_tv3bd")
@@ -171,17 +172,37 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_twhp7"]
 radius = 5.0
 
+<<<<<<< Updated upstream
 [node name="Player" type="CharacterBody2D" unique_id=1305437834]
+=======
+[node name="Player" type="CharacterBody2D" unique_id=436419327]
+>>>>>>> Stashed changes
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_brmte")
 
+<<<<<<< Updated upstream
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1405977481]
+=======
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1995793216]
+position = Vector2(0, -8)
+color = Color(1, 0.5803922, 0, 0.68235296)
+energy = 0.6
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.9843137)
+texture = ExtResource("3_6t5aa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=844590283]
+>>>>>>> Stashed changes
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_h6tvq")
 animation = &"idle"
 autoplay = "idle"
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=86296109]
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1441837890]
+>>>>>>> Stashed changes
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_twhp7")

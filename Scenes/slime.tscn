@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4r6uqqjgf8m6" path="res://Assets/sprites/slime_green.png" id="1_77wi1"]
 [ext_resource type="Script" uid="uid://dgjb3kaho124u" path="res://Scripts/slime.gd" id="1_i3nnu"]
 [ext_resource type="PackedScene" uid="uid://ds2c1u7ova4rv" path="res://Scenes/killzone.tscn" id="2_d4mai"]
+[ext_resource type="Texture2D" uid="uid://clfn2ubd2hppn" path="res://Assets/sprites/radial_gradient.png" id="4_paq7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7xso"]
 atlas = ExtResource("1_77wi1")
@@ -67,3 +68,9 @@ target_position = Vector2(10, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1088717652]
 position = Vector2(0, -7)
 target_position = Vector2(-10, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=93880983]
+position = Vector2(0, -7)
+color = Color(0.40392157, 0.6313726, 0.105882354, 0.5921569)
+energy = 0.6
+texture = ExtResource("4_paq7w")

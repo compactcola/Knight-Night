@@ -373,3 +373,6 @@ position = Vector2(-144, 96)
 
 [node name="slime2" parent="." unique_id=972919012 instance=ExtResource("6_j5cso")]
 position = Vector2(680, 96)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1541111033]
+color = Color(0.6228202, 0.7417936, 0.79315376, 1)
