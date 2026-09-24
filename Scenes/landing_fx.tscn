@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [node name="landing_fx" type="AnimatedSprite2D" unique_id=294275462]
-z_index = 6
+z_index = 10
 sprite_frames = SubResource("SpriteFrames_dacj3")
 autoplay = "default"
 frame = 5
