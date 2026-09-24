@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cf1n2uvs2yeos"]
+
+[ext_resource type="Texture2D" uid="uid://c37rbywklpjat" path="res://Assets/sprites/explosion_spritesheet.png" id="1_aayv4"]
+[ext_resource type="Script" uid="uid://u5gqx5erunre" path="res://Scripts/explosion.gd" id="2_a801j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a801j"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4okmj"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2xjm"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvnfy"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61lnk"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ogo"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48id1"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4yxj"]
+atlas = ExtResource("1_aayv4")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ra2i3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a801j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4okmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2xjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvnfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61lnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ogo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48id1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4yxj")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1417859990]
+process_mode = 3
+z_index = 6
+sprite_frames = SubResource("SpriteFrames_ra2i3")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_a801j")
