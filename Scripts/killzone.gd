@@ -2,9 +2,10 @@ extends Area2D
 @onready var timer = $Timer
 
 func _on_body_entered(body):
-	print ("You straight up died")
+	print("You straight up died")
 	Engine.time_scale = 0.5
-	body.get_node("AnimatedSprite2D").flip_v = true
+	
+	body.active_skin.flip_v = true
 	body.get_node("CollisionShape2D").queue_free()
 	
 	GameManager.explode(body.global_position)
