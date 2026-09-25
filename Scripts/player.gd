@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+@onready var skins: Array[AnimatedSprite2D] = [
+	$Skin1,
+	$Skin2,
+	$Skin3,
+]
 
 const SPEED = 120.0
 const JUMP_VELOCITY = -300.0
@@ -8,7 +13,18 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_falling = false
 
-@onready var animated_sprite = $AnimatedSprite2D
+# switch to random skin out of set
+var active_skin: AnimatedSprite2D
+
+func _ready():
+	randomize()  # remove this line if you want the same skin every run while testing
+	var chosen_index = randi() % skins.size()
+	
+	for i in skins.size():
+		skins[i].visible = (i == chosen_index)
+	
+	active_skin = skins[chosen_index]
+	active_skin.play("idle")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -27,18 +43,18 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
 	if direction > 0:
-		animated_sprite.flip_h = false
+		active_skin.flip_h = false
 	elif direction < 0:
-		animated_sprite.flip_h = true
+		active_skin.flip_h = true
 	
 	# Play animations
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite.play("idle")
+			active_skin.play("idle")
 		else:
-			animated_sprite.play("run")
+			active_skin.play("run")
 	else:
-		animated_sprite.play("jump")
+		active_skin.play("jump")
 	
 	if direction:
 		velocity.x = direction * SPEED
