@@ -176,6 +176,13 @@ texture = ExtResource("2_o7qyr")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6gcxa")
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kymbd"]
+particle_flag_disable_z = true
+spread = 30.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 50, 0)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rh5ma"]
 
 [sub_resource type="Animation" id="Animation_36s8y"]
@@ -252,6 +259,23 @@ limit_bottom = 126
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
+
+[node name="dust" type="GPUParticles2D" parent="Player" unique_id=2064616629]
+unique_name_in_owner = true
+emitting = false
+amount = 4
+lifetime = 0.3
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_kymbd")
+
+[node name="jumpdust" type="GPUParticles2D" parent="Player" unique_id=1991553817]
+unique_name_in_owner = true
+emitting = false
+amount = 4
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_kymbd")
 
 [node name="Killzone" parent="." unique_id=1394017975 instance=ExtResource("5_iihcc")]
 position = Vector2(0, 158)

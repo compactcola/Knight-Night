@@ -3,8 +3,10 @@ extends CharacterBody2D
 @onready var skins: Array[AnimatedSprite2D] = [
 	$Skin1,
 	$Skin2,
-	$Skin3,
+	$Skin3, 	
 ]
+@onready var run_dust = $dust
+@onready var jump_dust = $jumpdust
 
 const SPEED = 120.0
 const JUMP_VELOCITY = -300.0
@@ -12,7 +14,6 @@ const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_falling = false
-
 # switch to random skin out of set
 var active_skin: AnimatedSprite2D
 
@@ -34,14 +35,17 @@ func _physics_process(delta):
 	
 	if is_falling and is_on_floor():
 		is_falling = false
+		
 		landing_fx()
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_dust.restart()
 
 	var direction = Input.get_axis("move_left", "move_right")
-	
+	if direction != 0:
+		run_dust.process_material.direction.x = -direction
 	if direction > 0:
 		active_skin.flip_h = false
 	elif direction < 0:
@@ -51,10 +55,15 @@ func _physics_process(delta):
 	if is_on_floor():
 		if direction == 0:
 			active_skin.play("idle")
+			run_dust.emitting = false
 		else:
 			active_skin.play("run")
+			run_dust.emitting = true
+			
 	else:
 		active_skin.play("jump")
+		
+		run_dust.emitting = false
 	
 	if direction:
 		velocity.x = direction * SPEED
