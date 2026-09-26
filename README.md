@@ -13,3 +13,6 @@ Base game created following this tutorial by Brackeys: https://www.youtube.com/w
 - Added "dust" animation when the player lands 9/24/26 - Took about an hour to make the animation myself and implement without bugs
 
 ### Gavin
+- Added running dust effect that follows the player's movement direction 9/25/26
+- Added dust effect when the player jumps 9/25/26
+
